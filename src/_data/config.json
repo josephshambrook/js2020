@@ -1,0 +1,19 @@
+{
+  "name": "Joseph Shambrook",
+  "shortDesc": "I'm Joseph Shambrook, a front end developer in Edinburgh",
+  "url": "https://josephshambrook.dev",
+  "lang": "en",
+  "authorHandle": "@J_se_h",
+  "authorName": "Joseph Shambrook",
+  "syntaxTheme": "okaidia.css",
+  "permalinkClass": ["permalink"],
+  "iframeClass": ["iframes-wrapper"],
+  "codeClass": ["code-wrapper"],
+  "figureClass": ["figure"],
+  "paths": {
+    "src": "src",
+    "blogdir": "blog",
+    "includes": "components",
+    "output": "dist"
+  }
+}
