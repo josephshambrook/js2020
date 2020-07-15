@@ -1,0 +1,95 @@
+/*
+ * This CSS is pretty ugly for a simple effect.
+ * It's the only way I could get it to work,
+ * but I'd be very happy to see other solutions
+*/
+
+[class^='logo__'] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.logo__j {
+  animation: char-j 2s forwards;
+}
+
+.logo__s {
+  animation: char-s 2s forwards;
+}
+
+.logo__b--l {
+  animation: left-bracket 2s forwards;
+}
+
+.logo__b--r {
+  animation: right-bracket 2s forwards;
+}
+
+@keyframes char-j {
+  84.9% {
+    transform: translateX(100px);
+    visibility: hidden;
+  }
+  85% {
+    visibility: visible;
+  }
+  99.9% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0px);
+    visibility: visible;
+  }
+}
+
+@keyframes char-s {
+  99.9% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes left-bracket {
+  0% {
+    transform: translateX(159px);
+    visibility: hidden;
+  }
+  25% {
+    visibility: visible;
+  }
+  84.9% {
+    transform: translateX(159px);
+  }
+  85%,
+  99.9% {
+    transform: translateX(79.5px);
+  }
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@keyframes right-bracket {
+  0% {
+    transform: translateX(-171px);
+    visibility: hidden;
+  }
+  25% {
+    visibility: visible;
+  }
+  84.9% {
+    transform: translateX(-171px);
+  }
+  85%,
+  99.9% {
+    transform: translateX(-79.5px);
+  }
+  100% {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}

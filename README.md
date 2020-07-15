@@ -9,7 +9,7 @@ My personal website, which I've only bothered to start taking serious halfway th
 Install all the dependencies.
 
 ```bash
-yarn install
+yarn
 ```
 
 ### Running the local development mode

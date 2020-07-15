@@ -1,0 +1,18 @@
+---
+layout: page
+metaTitle: Joseph Shambrook Uses
+---
+
+<p>
+  I find it interesting to find out what other web devs use on a day-to-day basis - especially since <a href="https://uses.tech/" target="_blank" rel="noopener noreferrer">Wes Bos created a whole directory of Uses pages</a> by developers and writers. To contribute to this community effort, here's my own collection of tools that I use regularly.
+</p>
+
+{% for category, uses in uses | groupby("category") %}
+    <h2>{{ category | capitalize }}</h2>
+    {% for item in uses %}
+      <div class="use">
+        <h3 class="heading">{{ item.name | upper }} <a href="{{item.link}}" target="_blank" rel="noopener noreferrer" class="heading__link">Link</a></h3>
+        <p>{{ item.description }}</p>
+      </div>
+    {% endfor %}<br>
+{% endfor %}

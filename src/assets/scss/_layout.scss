@@ -1,0 +1,19 @@
+.layout {
+  --main-width: 100%;
+
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(auto, var(--main-width))
+    minmax(1rem, 1fr);
+}
+
+.layout > * {
+  grid-column: 2 / 3;
+}
+
+@media screen and (min-width: 47rem) {
+  .layout {
+    --main-width: 45rem;
+  }
+}
