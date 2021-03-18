@@ -1,8 +1,8 @@
 {% macro postItem(url, title, date) %}
-  <li>
+  <article>
     <h3>
       <a href="{{ url }}" rel="bookmark">{{ title }}</a>
     </h3>
-    <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
-  </li>
+    <time class="f6 db gray" datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+  </article>
 {% endmacro %}

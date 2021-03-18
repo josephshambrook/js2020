@@ -3,19 +3,31 @@ layout: 'home'
 metaTitle: 'Joseph Shambrook - Front End Developer'
 ---
 
-<section class="layout pv4 min-vh-75">
-  <h2 class="f1 lh-title measure-narrow">
+{% from "postItem.njk" import postItem %}
+
+<section class="pa3 pa4-ns">
+  <h2 class="f3 lh-copy">
     <div class="intro-line">Hey 👋</div>
-    <div class="intro-line"><span class="t-primary">I'm Joe</span>, a <span class="t-primary">Front End Developer</span></div>
+    <div class="intro-line"><span class="t-primary">I'm Joe</span>, <br class="dn-ns dn-m"/>a <span class="t-primary">Front End Developer</span></div>
     <div class="intro-line">working for <a href="https://and.digital" target="_blank" rel="noopener noreferrer" class="t-and">AND Digital</a></div>
-    <div class="intro-line">in <span class="t-primary">Edinburgh, Scotland</span> 🏴󠁧󠁢󠁳󠁣󠁴󠁿</div>
+    <div class="intro-line">in <span class="t-primary">Edinburgh, Scotland</span></div>
   </h2>
 </section>
 
-<section class="layout bg-light-gray pv4">
-  <div class="measure f5 lh-copy stack">
-    <p>I've been writing code for <span class="t-primary">10 years</span> now, working for companies ranging from exciting start-ups, to large financial institutions. I've predominantly written JavaScript and CSS, across a range of frameworks and libraries such as React, jQuery, SCSS, </p>
+{% set postList = collections.posts %}
+{% if collections.posts.length %}
+  <section class="layout--posts bg-light-gray pv4">
+    {# <ol reversed>
+      {% for item in postList | reverse %}
+        {% if not loop.first %}
+          <hr/>
+        {% endif %}
+        {{ postItem(item.url, item.data.title, item.date) }}
+      {% endfor %}
+    </ol> #}
 
-    <p>Alongside my career in coding, I've also fully enjoyed <span class="t-primary">mentoring and coaching</span> other developers along their career journeys.</p>
-  </div>
-</section>
+    {% for item in postList | reverse %}
+      {{ postItem(item.url, item.data.title, item.date) }}
+    {% endfor %}
+  </section>
+{% endif %}

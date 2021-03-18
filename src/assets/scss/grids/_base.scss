@@ -1,4 +1,4 @@
-.layout {
+.layout--base {
   --main-width: 100%;
 
   display: grid;
@@ -8,12 +8,12 @@
     minmax(1rem, 1fr);
 }
 
-.layout > * {
+.layout--base > * {
   grid-column: 2 / 3;
 }
 
 @media screen and (min-width: 47rem) {
-  .layout {
+  .layout--base {
     --main-width: 45rem;
   }
 }

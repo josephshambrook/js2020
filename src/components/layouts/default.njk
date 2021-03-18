@@ -1,3 +1,15 @@
+{# {% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main tabindex="-1">
+    {% include "header.njk" %}
+
+    {% block intro %}{% endblock intro %}
+    {{ content | safe }}
+    {% include "footer.njk" %}
+  </main>
+{% endblock content %} #}
+
 <html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
@@ -20,7 +32,14 @@
     <script src="/assets/js/app.js" defer></script>
   </head>
   <body class="sans-serif">
-    {% block content %}{% endblock content %}
+
+    <main tabindex="-1">
+      {% include "header.njk" %}
+
+      {% block intro %}{% endblock intro %}
+      {% block content %}{% endblock content %}
+      {% include "footer.njk" %}
+    </main>
 
     <script>
       {% if not env.IS_DEV %}
